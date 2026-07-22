@@ -15,6 +15,9 @@
 *.apk
 *.ap_
 
+# Workspace scratch (not part of the project)
+tmp/
+
 # Files for the ART/Dalvik VM
 *.dex
 
