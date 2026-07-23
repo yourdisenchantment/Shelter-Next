@@ -4,8 +4,8 @@
 
 - Android app (Java + AIDL) that manages a Work Profile for app isolation/cloning/freeze.
 - Package: `net.typeblog.shelter`. minSdk 24, compileSdk/targetSdk 35. AGP 8.6.0, Gradle 8.7 wrapper, Java 8 source.
-- Distribution: F-Droid + a Google Play repackage (see `repackage/repackage.sh`).
-- The GitHub repo is a mirror; the canonical remote is `https://gitea.angry.im/PeterCxy/Shelter.git`. Issues/PRs are not the supported workflow -- use the mailing list (see `README.md`).
+- Distribution: Google Play repackage only (see `repackage/repackage.sh`). F-Droid is NOT a target -- do not edit `metadata/`, do not push to F-Droid.
+- Canonical remote is `origin = git@github.com:yourdisenchantment/Shelter-Next.git` (`dev` = development, `main` = release-only). Upstream PeterCxy/Shelter on gitea is NOT configured as a remote and is read-only reference at most.
 
 ## Build & run
 
@@ -46,7 +46,29 @@
 - AIDL interfaces under `app/src/main/aidl/net/typeblog/shelter/{services,util}/*.aidl` define the IPC contracts for the services and for `UriForwardProxy`.
 - Providers: `FileProviderProxy` (authority `net.typeblog.shelter.files`) and `CrossProfileDocumentsProvider` (`...documents`, `MANAGE_DOCUMENTS`-gated, `enabled="false"` by default).
 - Utility classes: `LocalStorageManager`, `SettingsManager`, `AuthenticationUtility`, `ApplicationInfoWrapper`, `UriForwardProxy`, `Utility`, `InstallationProgressListener`.
-- Translations live in `app/src/main/res/values-*/`. Translations are managed upstream in Weblate; do not edit `values-*/strings.xml` by hand for languages you do not maintain -- see `CHANGELOG.md:30-31` for the workflow. F-Droid metadata is in `metadata/en-US/`.
+- Translations live in `app/src/main/res/values-*/`. Translations are NOT maintained in this fork -- do not touch `values-*/strings.xml` files except for `values/strings.xml` (English source) when adding user-facing strings. Do not run Weblate sync.
+
+## Git workflow
+
+- Branches (all pushed to `origin`, GitHub):
+  - `dev` -- the working line. New commits go **directly** here (signed). This is the clean starting baseline for all Shelter-Next work.
+  - `main` -- frozen release branch, carrying the inherited upstream history. Left untouched until the first release, then updated **only via a squash-merge PR** from `dev`, so each release lands as one clean commit.
+  - `feature/<name>` -- optional, for larger or riskier work; branched off `dev`, merged back into `dev`.
+- Protection:
+  - `dev` -- force-push and deletion are blocked (safety net); direct pushes are allowed. CI ("Android CI") runs on every push but does not gate pushes.
+  - `main` -- strict: PR required, the `build` check must pass, force-push and deletion blocked, enforced for admins.
+- Release flow: open a PR `dev` -> `main`, wait for green CI, **squash-merge** (collapses to one clean commit on `main`), then tag that commit (e.g. `v1.x.y`) and push the tag.
+- Commits and tags are **SSH-signed** (repo-level config: `gpg.format=ssh`, `user.signingkey=~/.ssh/id_ed25519.pub`, `commit.gpgsign=true`, `tag.gpgsign=true`). The public key is registered on GitHub as a signing key. Do not disable signing.
+- The agent **never** runs `git add`, `git commit`, `git push`, `git merge`, `git rebase`, `git tag`, or PR merges (writing). It only inspects and proposes commands.
+
+## Commit messages
+
+- Commits are made **manually** with `git commit`. No `commitizen`, no `pre-commit` -- previous attempts to use them were abandoned (commitizen 4.16.5 in this Python env forces interactive prompts, `pre-commit` has no config in this repo and the global tool just adds noise).
+- The agent **drafts** commit message text but **does not commit**. Drafts go to `tmp/commits/NN-slug.txt` in the project (NN = `01`, `02`, ... in commit order; a single commit is just `01-slug.txt`).
+- One file per commit. NN is the order in which the agent proposes commits for the current uncommitted set.
+- Format: Conventional Commits prefix (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`, ...). First line -- English imperative, <= 65 chars, no trailing period. Body -- bullets per logical change, blank line before body.
+- The user copies the subject and body from the file into `git commit -m "subject" -m "body" -m "next bullet" ...` (or pastes the whole message into `git commit` without `-m`).
+- `tmp/` is gitignored; do not commit its contents.
 
 ## Google Play repackage
 
