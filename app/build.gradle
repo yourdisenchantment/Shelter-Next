@@ -66,6 +66,9 @@ android {
     }
     lint {
         disable 'MissingTranslation', 'ExtraTranslation', 'GoogleAppIndexingWarning', 'InvalidFragmentVersionForActivityResult'
+        // Inherited issues are recorded here so lint gates only NEW problems.
+        // Burn the baseline down over time (see ROADMAP feature/lint-cleanup).
+        baseline = file('lint-baseline.xml')
     }
     buildFeatures {
         aidl true

@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.6.0" type="baseline" client="gradle" dependencies="false" name="AGP (8.6.0)" variant="all" version="8.6.0">
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
+        errorLine1="                            app.getPackageName().toLowerCase().contains(mSearchQuery)"
+        errorLine2="                                                 ~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/AppListAdapter.java"
+            line="310"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
+        errorLine1="                                    || app.getLabel().toLowerCase().contains(mSearchQuery))"
+        errorLine2="                                                      ~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/AppListAdapter.java"
+            line="311"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
+        errorLine1="                intent.putExtra(&quot;text&quot;, newText.toLowerCase().trim());"
+        errorLine2="                                                ~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/MainActivity.java"
+            line="373"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="LocaleFolder"
+        message="The locale folder &quot;`id`&quot; should be called &quot;`in`&quot; instead; see the `java.util.Locale` documentation">
+        <location
+            file="src/main/res/values-id"/>
+    </issue>
+
+    <issue
+        id="ForegroundServicePermission"
+        message="foregroundServiceType:systemExempted requires permission:[android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED] AND any permission in list:[android.permission.SCHEDULE_EXACT_ALARM, android.permission.USE_EXACT_ALARM]"
+        errorLine1="        &lt;service android:name=&quot;.services.ShelterService&quot;"
+        errorLine2="        ^">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="143"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ForegroundServicePermission"
+        message="foregroundServiceType:systemExempted requires permission:[android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED] AND any permission in list:[android.permission.SCHEDULE_EXACT_ALARM, android.permission.USE_EXACT_ALARM]"
+        errorLine1="        &lt;service android:name=&quot;.services.FreezeService&quot;"
+        errorLine2="        ^">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="158"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="FragmentTagUsage"
+        message="Replace the &lt;fragment> tag with FragmentContainerView."
+        errorLine1="    &lt;fragment"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_settings.xml"
+            line="25"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="QueryPermissionsNeeded"
+        message="As of Android 11, this method no longer returns information about all apps; see https://g.co/dev/packagevisibility for details"
+        errorLine1="                List&lt;ApplicationInfoWrapper> list = mPackageManager.getInstalledApplications(pmFlags)"
+        errorLine2="                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/services/ShelterService.java"
+            line="80"
+            column="69"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.fragment:fragment than 1.8.4 is available: 1.8.9"
+        errorLine1="    implementation &apos;androidx.fragment:fragment:1.8.4&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="82"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.7.0 is available: 1.7.1"
+        errorLine1="    implementation &apos;androidx.appcompat:appcompat:1.7.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="83"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1"
+        errorLine1="    implementation &apos;androidx.constraintlayout:constraintlayout:2.1.4&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="85"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.12.0 is available: 1.14.0"
+        errorLine1="    implementation &apos;com.google.android.material:material:1.12.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="86"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:runner than 1.6.0-alpha04 is available: 1.7.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test:runner:1.6.0-alpha04&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="91"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.6.0-alpha01 is available: 3.7.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.6.0-alpha01&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="92"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="Typos"
+        message="&quot;abzuschliessen&quot; is a common misspelling; did you mean &quot;abzuschließen&quot;?"
+        errorLine1="    &lt;string name=&quot;finish_provision_title&quot;>Klicken Sie hier, um die Installation von Shelter abzuschliessen&lt;/string>"
+        errorLine2="                                                                                            ^">
+        <location
+            file="src/main/res/values-de/strings.xml"
+            line="17"
+            column="93"/>
+    </issue>
+
+    <issue
+        id="Untranslatable"
+        message="The resource string &quot;settings_patreon_url&quot; is marked as translatable=&quot;false&quot;, but is translated to &quot;te&quot; (Telugu) here"
+        errorLine1="    &lt;string name=&quot;settings_patreon_url&quot; translatable=&quot;false&quot;/>"
+        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="36"
+            column="41"/>
+    </issue>
+
+    <issue
+        id="Untranslatable"
+        message="The resource string &quot;settings_translate_url&quot; is marked as translatable=&quot;false&quot;, but is translated to &quot;te&quot; (Telugu) here"
+        errorLine1="    &lt;string name=&quot;settings_translate_url&quot; translatable=&quot;false&quot;/>"
+        errorLine2="                                          ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="62"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="Untranslatable"
+        message="The resource string &quot;settings_bug_report_url&quot; is marked as translatable=&quot;false&quot;, but is translated to &quot;te&quot; (Telugu) here"
+        errorLine1="    &lt;string name=&quot;settings_bug_report_url&quot; translatable=&quot;false&quot;/>"
+        errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="91"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="Untranslatable"
+        message="The resource string &quot;device_admin_label&quot; is marked as translatable=&quot;false&quot;, but is translated to &quot;te&quot; (Telugu) here"
+        errorLine1="    &lt;string name=&quot;device_admin_label&quot; translatable=&quot;false&quot;/>"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="105"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="Untranslatable"
+        message="The resource string &quot;app_name&quot; is marked as translatable=&quot;false&quot;, but is translated to &quot;te&quot; (Telugu) here"
+        errorLine1="    &lt;string name=&quot;app_name&quot; translatable=&quot;false&quot;/>"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="116"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="Untranslatable"
+        message="The resource string &quot;settings_source_code_url&quot; is marked as translatable=&quot;false&quot;, but is translated to &quot;te&quot; (Telugu) here"
+        errorLine1="    &lt;string name=&quot;settings_source_code_url&quot; translatable=&quot;false&quot;/>"
+        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="120"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="Untranslatable"
+        message="The resource string &quot;settings_patreon&quot; is marked as translatable=&quot;false&quot;, but is translated to &quot;te&quot; (Telugu) here"
+        errorLine1="    &lt;string name=&quot;settings_patreon&quot; translatable=&quot;false&quot;/>"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="124"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="UnsafeIntentLaunch"
+        message="This intent could be coming from an untrusted source. It is later launched by an unprotected component net.typeblog.shelter.ui.MainActivity. You could either make the component net.typeblog.shelter.ui.MainActivity protected; or sanitize this intent using androidx.core.content.IntentSanitizer."
+        errorLine1="            Intent intent = getIntent();"
+        errorLine2="                            ~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/MainActivity.java"
+            line="317"
+            column="29"/>
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/MainActivity.java"
+            line="319"
+            column="13"
+            message="The unsafe intent is launched here."/>
+    </issue>
+
+    <issue
+        id="DataExtractionRules"
+        message="The attribute `android:allowBackup` is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute `android:dataExtractionRules` specifying an `@xml` resource which configures cloud backups and device transfers on Android 12 and higher."
+        errorLine1="        android:allowBackup=&quot;false&quot;"
+        errorLine2="                             ~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="34"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="                    notifyDataSetChanged();"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/AppListAdapter.java"
+            line="118"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged();"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/AppListAdapter.java"
+            line="274"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged();"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/ui/AppListAdapter.java"
+            line="314"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="Recycle"
+        message="This `Cursor` should be freed up after use with `#close()`"
+        errorLine1="        Cursor cursor = context.getContentResolver().query("
+        errorLine2="                                                     ~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/util/Utility.java"
+            line="333"
+            column="54"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 21"
+        errorLine1="    @TargetApi(Build.VERSION_CODES.LOLLIPOP)"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/util/Utility.java"
+            line="458"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `SettingsManager` which has field `mContext` pointing to `Context`); this is a memory leak"
+        errorLine1="    private static SettingsManager sInstance = null;"
+        errorLine2="            ~~~~~~">
+        <location
+            file="src/main/java/net/typeblog/shelter/util/SettingsManager.java"
+            line="12"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        message="Very long vector path (1057 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        errorLine1="          android:pathData=&quot;M32.949,34.211H3.841c-1.139,0 -2.164,-0.687 -2.598,-1.741c-0.43,-1.053 -0.178,-2.251 0.629,-3.054L26.1,5.604H3.841c-1.55,0 -2.802,-1.267 -2.802,-2.802C1.04,1.248 2.292,0 3.841,0h29.108c1.137,0 2.164,0.689 2.593,1.743c0.432,1.053 0.18,2.252 -0.627,3.053L10.687,28.61h22.263c1.545,0 2.802,1.261 2.802,2.802C35.751,32.963 34.49,34.211 32.949,34.211zM65.562,39.967H51.849l15.688,-15.42c0.812,-0.807 1.051,-2 0.63,-3.053c-0.43,-1.053 -1.466,-1.747 -2.604,-1.747H44.995c-1.538,0 -2.802,1.255 -2.802,2.801c0,1.535 1.264,2.802 2.802,2.802h13.721L43.027,40.766c-0.818,0.81 -1.058,1.998 -0.627,3.054c0.434,1.062 1.456,1.751 2.595,1.751h20.566c1.549,0 2.802,-1.259 2.802,-2.802C68.363,41.225 67.11,39.967 65.562,39.967zM33.935,63.804h-9.565L35.9,52.477c0.814,-0.799 1.06,-2.009 0.63,-3.063c-0.432,-1.052 -1.459,-1.741 -2.596,-1.741H17.524c-1.547,0 -2.803,1.258 -2.803,2.802c0,1.542 1.256,2.802 2.803,2.802h9.565L15.557,64.602c-0.812,0.81 -1.06,1.998 -0.627,3.054c0.431,1.056 1.456,1.751 2.595,1.751h16.411c1.547,0 2.801,-1.259 2.801,-2.802S35.494,63.804 33.935,63.804z&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/drawable/ic_freeze_foreground.xml"
+            line="9"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        message="Very long vector path (1057 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        errorLine1="            android:pathData=&quot;M32.949,34.211H3.841c-1.139,0 -2.164,-0.687 -2.598,-1.741c-0.43,-1.053 -0.178,-2.251 0.629,-3.054L26.1,5.604H3.841c-1.55,0 -2.802,-1.267 -2.802,-2.802C1.04,1.248 2.292,0 3.841,0h29.108c1.137,0 2.164,0.689 2.593,1.743c0.432,1.053 0.18,2.252 -0.627,3.053L10.687,28.61h22.263c1.545,0 2.802,1.261 2.802,2.802C35.751,32.963 34.49,34.211 32.949,34.211zM65.562,39.967H51.849l15.688,-15.42c0.812,-0.807 1.051,-2 0.63,-3.053c-0.43,-1.053 -1.466,-1.747 -2.604,-1.747H44.995c-1.538,0 -2.802,1.255 -2.802,2.801c0,1.535 1.264,2.802 2.802,2.802h13.721L43.027,40.766c-0.818,0.81 -1.058,1.998 -0.627,3.054c0.434,1.062 1.456,1.751 2.595,1.751h20.566c1.549,0 2.802,-1.259 2.802,-2.802C68.363,41.225 67.11,39.967 65.562,39.967zM33.935,63.804h-9.565L35.9,52.477c0.814,-0.799 1.06,-2.009 0.63,-3.063c-0.432,-1.052 -1.459,-1.741 -2.596,-1.741H17.524c-1.547,0 -2.803,1.258 -2.803,2.802c0,1.542 1.256,2.802 2.803,2.802h9.565L15.557,64.602c-0.812,0.81 -1.06,1.998 -0.627,3.054c0.431,1.056 1.456,1.751 2.595,1.751h16.411c1.547,0 2.801,-1.259 2.801,-2.802S35.494,63.804 33.935,63.804z&quot;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/drawable/ic_freeze_tinted.xml"
+            line="10"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        message="Very long vector path (964 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        errorLine1="        android:pathData=&quot;m171.04,181.02 l-85,77.59 -5.21,-6.64C50.53,317.75 31.12,390.57 28.72,463.15l28,13.74 113.38,-80 28.35,80 28.35,-26.68 56.75,29.34 56.69,-56 56.7,80 56.69,-53.36 56.69,53.36 85,-106.72 85,106.72 28.32,-26.36c-0.2,-76.35 -19.77,-153.52 -51.42,-222.96l-32.68,30.23 -85,-77.58 -56.7,51.72 -56.69,-25.86 -56.69,25.86 -28.35,-51.72 -56.69,51.72 -56.69,-25.86 -28.35,25.86zM255.12,311.81c15.66,0 28.35,19.04 28.35,42.52 -0,23.48 -12.69,42.52 -28.35,42.52 -15.66,-0 -28.35,-19.04 -28.35,-42.52 0,-9.58 2.12,-18.42 5.68,-25.53 0,0 0,-0.01 0,-0.01 0.02,-0.03 0.04,-0.06 0.06,-0.1 0.76,-1.5 1.58,-2.93 2.46,-4.27 0.01,-0.01 0.02,-0.03 0.03,-0.04 0.91,-1.37 1.88,-2.65 2.9,-3.82 0,0 0,0 0.01,-0.01 4.77,-5.48 10.74,-8.74 17.21,-8.74zM481.89,311.81c15.66,0 28.35,19.04 28.35,42.52 -0,23.48 -12.69,42.52 -28.35,42.52 -15.66,-0 -28.35,-19.04 -28.35,-42.52 0,-9.58 2.12,-18.42 5.68,-25.53 0,0 0,-0.01 0,-0.01 0.02,-0.03 0.04,-0.06 0.06,-0.1 5.18,-10.25 13.38,-16.88 22.61,-16.88z&quot;"
+        errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/drawable/ic_launcher_egg_foreground_monochrome.xml"
+            line="7"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        message="Very long vector path (871 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        errorLine1="        android:pathData=&quot;M19.43,12.98c0.04,-0.32 0.07,-0.64 0.07,-0.98s-0.03,-0.66 -0.07,-0.98l2.11,-1.65c0.19,-0.15 0.24,-0.42 0.12,-0.64l-2,-3.46c-0.12,-0.22 -0.39,-0.3 -0.61,-0.22l-2.49,1c-0.52,-0.4 -1.08,-0.73 -1.69,-0.98l-0.38,-2.65C14.46,2.18 14.25,2 14,2h-4c-0.25,0 -0.46,0.18 -0.49,0.42l-0.38,2.65c-0.61,0.25 -1.17,0.59 -1.69,0.98l-2.49,-1c-0.23,-0.09 -0.49,0 -0.61,0.22l-2,3.46c-0.13,0.22 -0.07,0.49 0.12,0.64l2.11,1.65c-0.04,0.32 -0.07,0.65 -0.07,0.98s0.03,0.66 0.07,0.98l-2.11,1.65c-0.19,0.15 -0.24,0.42 -0.12,0.64l2,3.46c0.12,0.22 0.39,0.3 0.61,0.22l2.49,-1c0.52,0.4 1.08,0.73 1.69,0.98l0.38,2.65c0.03,0.24 0.24,0.42 0.49,0.42h4c0.25,0 0.46,-0.18 0.49,-0.42l0.38,-2.65c0.61,-0.25 1.17,-0.59 1.69,-0.98l2.49,1c0.23,0.09 0.49,0 0.61,-0.22l2,-3.46c0.12,-0.22 0.07,-0.49 -0.12,-0.64l-2.11,-1.65zM12,15.5c-1.93,0 -3.5,-1.57 -3.5,-3.5s1.57,-3.5 3.5,-3.5 3.5,1.57 3.5,3.5 -1.57,3.5 -3.5,3.5z&quot;/>"
+        errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/drawable/ic_settings_tinted_24dp.xml"
+            line="8"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_freeze_round` appears to be unused">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_freeze_round.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_shelter_background` appears to be unused"
+        errorLine1="&lt;vector"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_launcher_shelter_background.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.first_run_alert` appears to be unused"
+        errorLine1="    &lt;string name=&quot;first_run_alert&quot;>أنت على وشك إعداد العازل.\n\nيعتمد هذا التطبيق على ميزة ملف العمل في أندرويد لعزل التطبيقات. إذا كنت تستخدم نسخة أندرويد معدله او مخصصه بصانع الهاتف (مثل MIUI) ، يجب عليك الآن الخروج و عدم استخدام هذا التطبيق.\n\nإذا اخترت المتابعة ، فسيقوم العازل بإعداد ملف العمل.\n\nإذا كنت مطورًا وترغب في جعل العازل يعمل على الأجهزة غير المتوافقة مثل MIUI ، فإن طلبات التعديل تكون دائمًا موضع ترحيب. المطور غير مسؤول إطلاقًا في حالة حدوث مشكله بجهازك غير متوافق.&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-ar/strings.xml"
+            line="3"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.device_admin_explanation` appears to be unused"
+        errorLine1="    &lt;string name=&quot;device_admin_explanation&quot;>Shelter needs to become Device Admin in order to perform its isolation tasks.&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="7"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.device_admin_toast` appears to be unused"
+        errorLine1="    &lt;string name=&quot;device_admin_toast&quot;>يجب منح إذن إدارة الجهاز لالعازل للعمل. حاول مرة اخرى.&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-ar/strings.xml"
+            line="30"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.provision_still_pending` appears to be unused"
+        errorLine1="    &lt;string name=&quot;provision_still_pending&quot;>…الرجاء الانتظار بينما نقوم بإعداد ملف عمل العازل لك &lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-ar/strings.xml"
+            line="31"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.msg_device_unsupported` appears to be unused"
+        errorLine1="    &lt;string name=&quot;msg_device_unsupported&quot;>Permission is denied or Unsupported device&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="95"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.work_profile_provision_failed` appears to be unused"
+        errorLine1="    &lt;string name=&quot;work_profile_provision_failed&quot;>Cannot provision work profile. You may try again by restarting Shelter.&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="97"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Installerar...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-sv/strings.xml"
+            line="4"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>ఇన్‌స్టాల్ చేయబడుతోంది...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-te/strings.xml"
+            line="10"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Installation...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-fr/strings.xml"
+            line="13"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Instalowanie...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-pl/strings.xml"
+            line="14"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Installazione...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-it/strings.xml"
+            line="15"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>インストール中...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~">
+        <location
+            file="src/main/res/values-ja/strings.xml"
+            line="15"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>설치 중...&lt;/string>"
+        errorLine2="                                  ~~~~~~~">
+        <location
+            file="src/main/res/values-ko/strings.xml"
+            line="16"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Wird installiert...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-de/strings.xml"
+            line="24"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Instalando...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-pt-rBR/strings.xml"
+            line="24"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Yükleniyor...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-tr/strings.xml"
+            line="28"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Installing...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="35"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>מתקין...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~">
+        <location
+            file="src/main/res/values-iw/strings.xml"
+            line="38"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Se instalează ...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-ro/strings.xml"
+            line="40"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Инсталирање...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-sr/strings.xml"
+            line="43"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Memasang...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-id/strings.xml"
+            line="47"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Установка...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-ru-rRU/strings.xml"
+            line="57"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Instalando...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-es/strings.xml"
+            line="64"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>تثبيت...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~">
+        <location
+            file="src/main/res/values-ar/strings.xml"
+            line="68"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>در حال نصب...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-fa/strings.xml"
+            line="70"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Installeren...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-nl/strings.xml"
+            line="70"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Instaluji...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-cs/strings.xml"
+            line="71"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;app_installing&quot;>Εγκατάσταση...&lt;/string>"
+        errorLine2="                                  ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-el/strings.xml"
+            line="110"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        message="The application adaptive icon is missing a monochrome tag"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher_egg.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        message="The application adaptive roundIcon is missing a monochrome tag"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher_egg_round.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_freeze.png, ic_freeze_round.png">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_freeze_round.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_freeze.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_freeze.png, ic_freeze_round.png">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_freeze_round.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_freeze.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_freeze.png, ic_freeze_round.png">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_freeze_round.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_freeze.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_freeze.png, ic_freeze_round.png">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_freeze_round.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_freeze.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_freeze.png, ic_freeze_round.png">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_freeze_round.png"/>
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_freeze.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_launcher_egg.png, ic_launcher_egg_round.png">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_egg_round.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_egg.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_launcher_egg.png, ic_launcher_egg_round.png">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_egg_round.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_egg.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_launcher_egg.png, ic_launcher_egg_round.png">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_egg_round.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_egg.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_launcher_egg.png, ic_launcher_egg_round.png">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_egg_round.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_egg.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: ic_launcher_egg.png, ic_launcher_egg_round.png">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_egg_round.png"/>
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_egg.png"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/app_list_item.xml"
+            line="9"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;"
+        errorLine1="    android:clickable=&quot;true&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/app_list_item.xml"
+            line="4"
+            column="5"/>
+    </issue>
+
+</issues>
