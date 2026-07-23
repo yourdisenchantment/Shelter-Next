@@ -1,0 +1,87 @@
+# Builds the debug APK and runs lint on every push/PR to dev and main.
+# There is no real unit-test suite in this repo (only the auto-generated
+# ExampleUnitTest), so this pipeline is "does it compile + lint clean",
+# which matches the project's actual verify chain.
+#
+# GOTCHAS baked in below (all discovered from app/build.gradle):
+#  1. versionCode  = `git rev-list --first-parent --count main`
+#     versionName  = `git describe --tags --dirty`
+#     => the checkout MUST have full history (fetch-depth: 0), all tags,
+#        AND a local `main` ref, or versionCode becomes -1 and the build
+#        FAILS. See the "Ensure main ref" step.
+#  2. Submodule libs/SetupWizardLibrary is required or the build dies with
+#     cryptic errors => submodules: recursive.
+#  3. buildToolsVersion is pinned to 35.0.0 and compileSdk 35 => install
+#     those explicitly rather than trusting the runner's preinstalled set.
+#  4. JDK 21 (AGP 8.6 supports JDK 17-21; matches Android Studio's
+#     bundled JBR 21. Do NOT use JDK 22+ until AGP/Gradle are bumped).
+
+name: Android CI
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+
+# Cancel superseded runs on the same ref to save minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history + submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0   # required: versionCode/versionName derive from git
+
+      - name: Ensure local `main` ref exists (for versionCode)
+        # On PR/feature builds only the checked-out branch is local; the
+        # build script counts commits on `main`, so make sure it resolves.
+        run: git fetch --no-tags origin main:main || true
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install pinned SDK packages
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle', 'gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: gradle-${{ runner.os }}-
+
+      - name: Assemble debug APK
+        run: ./gradlew :app:assembleDebug --no-daemon
+
+      - name: Lint
+        run: ./gradlew :app:lint --no-daemon
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: shelter-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: warn
+
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-report
+          path: app/build/reports/lint-results-*.html
+          if-no-files-found: warn
